@@ -15,9 +15,28 @@ mongoose
     console.log(e);
   });
 
-  console.log('hi')
 app.get("/get", (req, res) => {
-  res.send("hello");
+  const noteSchema = new mongoose.Schema({
+    title: {
+      type: String,
+      required: true,
+      minlength: 3,
+    },
+    details: {
+      type: String,
+      required: true,
+      minlength: 3,
+    },
+    category: {
+      type: String,
+      required: true,
+    },
+  });
+  
+  const Note = new mongoose.model("Note", noteSchema);
+
+  const notesData = await Note.find();
+  res.send(notesData");
 });
 
 if (process.env.NODE_ENV === "production") {
