@@ -36,7 +36,7 @@ app.get("/get", (req, res) => {
   const Note = new mongoose.model("Note", noteSchema);
 
   const notesData = await Note.find();
-  res.send(notesData");
+  res.send(notesData);
 });
 
 if (process.env.NODE_ENV === "production") {
