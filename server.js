@@ -15,7 +15,7 @@ mongoose
     console.log(e);
   });
 
-app.get("/", (req, res) => {
+app.get("/get", (req, res) => {
   res.send("hello");
 });
 
